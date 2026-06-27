@@ -1,0 +1,22 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        visited = set()
+
+        curr = head # init temporary pointer
+
+        while curr is not None:
+            if curr not in visited:
+                visited.add(curr)
+            else:
+                return True
+            curr = curr.next
+                
+        return False
+        
+        
